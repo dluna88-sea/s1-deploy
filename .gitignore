@@ -130,5 +130,4 @@ dist
 .pnp.*
 
 
-mongodb/logs/*
-mongodb/volume/*
+mongodb/data
