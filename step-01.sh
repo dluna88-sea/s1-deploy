@@ -1,4 +1,4 @@
 #/bin/bash
 
 mkdir -p mongodb/data/{log,volume}
-chmod 0666 -R mongodb/data
+chmod 0777 -R mongodb/data
