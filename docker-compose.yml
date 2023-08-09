@@ -1,8 +1,7 @@
 version: '3.1'
 services:
-  mongodb:
+  mongodb2:
     image: mongo
-    container_name: mongodb
     restart: always
     ports:
       - ${DB_PORT}:27017
@@ -10,7 +9,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${DB_ROOT_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     volumes:
-      - ./mongodb/volume:/var/lib/mongodb
-      - ./mongodb/config/mongodb.conf:/etc/mongod.conf
-      - ./mongodb/log/:/var/log/mongodb/
+      - ./mongodb/config/mongod.conf:/etc/mongod.conf
+      - ./mongodb/data/log/:/var/log/mongodb
+      - ./mongodb/data/volume:/var/lib/mongodb
     command: ['-f', '/etc/mongod.conf']
