@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   mongodb2:
-    image: mongo
+    image: mongo:7.0.0
     restart: always
     ports:
       - ${DB_PORT}:27017
