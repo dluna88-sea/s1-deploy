@@ -13,3 +13,21 @@ services:
       - ./mongodb/data/log/:/var/log/mongodb
       - ./mongodb/data/volume:/var/lib/mongodb
     command: ['-f', '/etc/mongod.conf']
+  oauth:
+    image: pdnmx/s1-oauth:1.0
+    restart: always
+    ports:
+      - ${API_OAUTH_PORT}:3000
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_AUDIENCE: ${JWT_AUDIENCE}
+      JWT_ISSUER: ${JWT_ISSUER}
+      JWT_TOKEN_TTL: ${JWT_TOKEN_TTL}
+      JWT_REFRESH_TOKEN_TTL: ${JWT_REFRESH_TOKEN_TTL}
+      API_OAUTH_PREFIX: ${API_OAUTH_PREFIX}
+      MONGO_OAUTH_HOST: ${MONGO_OAUTH_HOST}
+      MONGO_OAUTH_USER: ${MONGO_OAUTH_USER}
+      MONGO_OAUTH_PASS: ${MONGO_OAUTH_PASS}
+      MONGO_OAUTH_PORT: ${MONGO_OAUTH_PORT}
+      MONGO_OAUTH_DATABASE: ${MONGO_OAUTH_DATABASE}
+      MONGO_OAUTH_DB_AUTH: ${MONGO_OAUTH_DB_AUTH}
