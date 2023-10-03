@@ -15,7 +15,7 @@ services:
       - ./mongodb/data/volume:/var/lib/mongodb
     command: ['-f', '/etc/mongod.conf']
   s1-oauth:
-    image: pdnmx/s1-oauth-prod:1.0
+    image: pdnmx/s1-oauth:1.0-dev
     container_name: s1-oauth
     hostname: oauth.s1.pdn
     restart: always
@@ -35,7 +35,7 @@ services:
       MONGO_OAUTH_DATABASE: ${MONGO_OAUTH_DATABASE}
       MONGO_OAUTH_DB_AUTH: ${MONGO_OAUTH_DB_AUTH}
   s1-api:
-    image: pdnmx/s1-api-prod:1.0
+    image: pdnmx/s1-api:1.0-dev
     container_name: s1-api
     hostname: api.s1.pdn
     restart: always
