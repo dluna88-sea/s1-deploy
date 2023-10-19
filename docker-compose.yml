@@ -3,6 +3,7 @@ services:
   s1-database:
     image: mongo:7.0.0
     container_name: s1-database
+    hostname: database.s1.pdn
     restart: always
     ports:
       - ${DB_PORT}:27017
