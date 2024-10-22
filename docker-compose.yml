@@ -13,6 +13,7 @@ services:
       - ./mongodb/config/mongod.conf:/etc/mongod.conf
       - ./mongodb/data/log/:/var/log/mongodb
       - ./mongodb/data/volume:/var/lib/mongodb
+      - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
     command: ['-f', '/etc/mongod.conf']
   s1-oauth:
     #use -dev for check data set in .env its correct.
